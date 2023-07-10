@@ -1,0 +1,58 @@
+Master
+
+sudo su -
+yum update -y
+           yum search docker
+            yum info docker
+             yum install -y docker
+             systemctl enable docker.service
+            systemctl start docker.service
+          systemctl status docker.service
+           docker version
+             curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+           chmod +x /usr/local/bin/docker-compose
+         docker-compose version
+     docker swarm init
+    
+     docker swarm join-token worker
+     docker node ls
+     docker node  promote ip-172-31-17-36.eu-west-2.compute.internal
+     
+     
+    docker service create --name demo --replicas 2 --publish 8080:80 httpd
+     docker ps
+     docker service ls
+     docker service scale j2p90n5nhky7=5
+     docker ps
+     docker service scale j2p90n5nhky7=2
+     docker ps
+     docker service ls
+    docker service inspect j2p90n5nhky7
+     docker swarm leave --force 
+     docker ps
+   
+
+
+
+
+Worker
+
+sudo su -
+yum update -y
+           yum search docker
+             yum info docker
+             yum install -y docker
+             systemctl enable docker.service
+           systemctl start docker.service
+            systemctl status docker.service
+            docker version
+             curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+           chmod +x /usr/local/bin/docker-compose
+          docker-compose version
+     docker swarm join --token SWMTKN-1-3aa1nlcowa5r1fdig2uvrorjezblk6waa3oyrd3kito8k6x7n4-6o8j51c46ugcfa5cc6v4h4zu4 172.31.17.36:2377
+    
+    
+     docker ps
+docker swarm leave --force
+    docker ps -a
+  

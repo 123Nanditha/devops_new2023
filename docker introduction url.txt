@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=vacvCaE4uQM    (O.S Level Virtualisation in Docker)
+
+
+https://www.youtube.com/watch?v=vWjP3fsfgrw&t=866s (What is Docker and how it works ? )
+
+
+https://www.youtube.com/watch?v=h17po-0DfWE&list=RDLVvWjP3fsfgrw&index=2     (Docker Architecture)  

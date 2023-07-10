@@ -1,0 +1,79 @@
+sudo su -
+yum update -y
+           yum search docker
+            yum info docker
+             yum install -y docker
+             systemctl enable docker.service
+            systemctl start docker.service
+          systemctl status docker.service
+           docker version
+             curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+           chmod +x /usr/local/bin/docker-compose
+         docker-compose version
+
+docker images
+docker ps 
+docker run -itd (image id)
+
+cd /var/lib/docker/volumes
+ls
+exit 
+
+
+
+creating volume 
+
+
+sudo su -
+docker pull httpd
+docker images
+docker run -itd (imageid)
+docker ps
+docker exec -it 7f126d5601f6 bash
+ls
+cd htdocs
+ls
+exit
+ docker volume create demo1
+docker volume inspect demo1
+
+docker run -itd -v demo1:/usr/local/apache2/htdocs/ -p 9000:80 httpd
+
+docker ps
+docker exec -it f63f1677d276 bash
+ls
+
+cd htdocs
+touch a.txt
+
+ls
+
+duplicate ec2 instance to new page and check the edited volume
+
+sudo su -
+
+docker ps
+     cd /var/lib/docker/volumes
+     ls
+     cd demo1
+     ls
+    cd _data
+    ls
+
+
+
+Now attaching the demo1 volume to new image 
+ 
+docker pull ubuntu
+     docker run -itd -p 8087:80 -v demo1:/usr/local/apache2/htdocs/ ubuntu
+
+     docker ps
+     docker exec -it 1badc585771d bash
+    ls
+     cd /var/lib/docker/volumes
+     ls
+exit
+    cd demo1
+    ls
+     cd _data
+     ls

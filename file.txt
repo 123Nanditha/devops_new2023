@@ -1,0 +1,77 @@
+# 
+sudo su -
+      yum install -y docker
+       systemctl enable docker.service
+       systemctl start docker.service
+       systemctl status docker.service
+      docker version
+      docker pull centos
+      
+     docker images
+     docker run -itd -p 5000:8080 (image id)
+     docker ps
+    docker exec -it (enter container id) bash
+    wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+     yum install -y wget
+     docker images
+   
+     docker exec -it 83769768f81a bash
+
+   
+       cd /etc/yum.repos.d/
+      sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+      cd /
+     yum install wget -y
+   wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+     ls
+     tar -zvxf apache-tomcat-9.0.76.tar.gz
+     ls
+     cd apache-tomcat-9.0.76.tar.gz
+    ls
+    cd bin/
+     ls
+     sh startup.sh 
+     yum install java-11* -y
+     sh startup.sh 
+   
+
+
+
+
+
+
+
+
+Tomcat dockerfile 
+
+    mkdir dockerfile
+     cd dockerfile/
+     vi dockerfile 
+
+   FROM amazonlinux
+    MAINTAINER <Enter Docker hub mail_id>
+    RUN yum update -y
+    RUN yum install -y wget
+    RUN yum install -y tar
+    RUN yum install -y gzip
+    RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+    RUN tar -xf apache-tomcat-9.0.76.tar.gz
+    RUN yum install java -y
+    RUN sh apache-tomcat-9.0.76/bin/startup.sh
+
+
+
+
+     
+     docker build -t tomcat .
+     docker images
+     docker run -itd -p 8000:8080 ad8aca9208e5
+    
+     docker ps
+     docker exec  -it ce3200451d6c bash
+   
+       ls
+     cd apache-tomcat-9.0.76/bin/
+      sh startup.sh
+      history
